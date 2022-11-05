@@ -188,7 +188,7 @@
     (property "Value" "XT60_F" (id 1) (at 95.25 33.2739 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (id 2) (at 78.74 26.67 0)
+    (property "Footprint" "PiE_Footprints:XT60_F" (id 2) (at 78.74 26.67 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (id 3) (at 78.74 26.67 0)
@@ -226,7 +226,7 @@
       (reference "#PWR0101") (unit 1) (value "GND") (footprint "")
     )
     (path "/61f06b21-2f97-41e2-9bcc-b68f2e7b5723"
-      (reference "Battery1") (unit 1) (value "XT60_F") (footprint "")
+      (reference "Battery1") (unit 1) (value "XT60_F") (footprint "PiE_Footprints:XT60_F")
     )
     (path "/cc06864b-7a29-42b8-ae65-4c9e7f6eecfb"
       (reference "U1") (unit 1) (value "Anderson_Horizontal") (footprint "PiE_Footprints:anderson_horizontal")
