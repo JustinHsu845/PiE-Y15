@@ -1,4 +1,4 @@
-20520431408547224
+20522099229209508
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -75333,6 +75333,13 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+PiE_Footprints
+ATX
+
+
+0
+2
+2
 PiE_Footprints
 XT60_F
 AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
