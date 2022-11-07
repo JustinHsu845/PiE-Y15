@@ -665,7 +665,7 @@
     (property "Value" "C" (id 1) (at 68.58 24.7699 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "" (id 2) (at 63 23.5 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (id 2) (at 63 23.5 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 63 23.5 0)
@@ -729,7 +729,7 @@
       (reference "Batt1") (unit 1) (value "XT60_F") (footprint "PiE_Footprints:XT60_F")
     )
     (path "/f1dbef02-4e2e-4339-86bb-12922133b71d"
-      (reference "C1") (unit 1) (value "C") (footprint "")
+      (reference "C1") (unit 1) (value "C") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
   )
 )
