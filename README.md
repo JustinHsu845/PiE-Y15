@@ -15,3 +15,8 @@ We are basing our design on the Y9 PDB design. We will use a toggle switch inste
         - On when 5v power is working
     - Need 1 low battery LED
         - On when battery is below 11V (ask around)
+- Test ASAP
+    - Main Power Distributor Circuit
+    - Arduino LED circuit
+    - DC voltage fluctuations with and without capacitor
+    
