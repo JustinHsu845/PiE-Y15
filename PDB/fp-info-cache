@@ -1,4 +1,4 @@
-20522099333004947
+20523767670754983
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -75334,12 +75334,19 @@ TO-264-5 Vertical RM 3.81mm
 5
 5
 PiE_Footprints
-ATX
+2_pin_molex
 
 
 0
 2
 2
+PiE_Footprints
+BUCK_CONVERTER_5V
+5V Buck Converter. For PDB. <a href ="https://www.amazon.com/dp/B00GQ032DK/?psc=1"> Product Detail </a>
+
+0
+4
+4
 PiE_Footprints
 XT60_F
 AMASS female XT60, through hole, vertical, https://www.tme.eu/Document/2d152ced3b7a446066e6c419d84bb460/XT60%20SPEC.pdf
