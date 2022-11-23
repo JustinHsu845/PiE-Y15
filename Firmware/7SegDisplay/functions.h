@@ -35,22 +35,53 @@ void printDigit(char Chara, int digitPort) {
   }
 }
 
+char convert(char number) { //converts input char to another char
+  string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  return alphabet.charAt(number);
+}
+
 void printDisplay(String Phrase, int Delay) { //no scrolling
   int stringLength = Phrase.length();
   int delay_factor = digits * 2;
   char char1 = ' ';
   char char2 = ' ';
   char char3 = ' ';
+  int decimal_pos = -1;
   if (digits == 4) {
     char char4 = ' ';
   }
 
   for(int ti = 0 ; ti <= (Delay / delay_factor) ; ti++) { //continously flashes characters for DELAY duration
-    if (1 <= stringLength) char1 = Phrase.charAt(0);
-    if (2 <= stringLength) char2 = Phrase.charAt(1);
-    if (3 <= stringLength) char3 = Phrase.charAt(2);
+    for (int i = 0; i < digits; i++) {
+      if (Phrase.charAt(i) == '.') {
+        stringLength -= 1;
+        decimal_pos = i + 1;
+      }
+    }
+
+    if (1 <= stringLength && i != decimal_pos) {
+      char1 = Phrase.charAt(0);
+    } else if (1 <= stringLength) {
+      char1 = convert(Phrase.charAt(0)) //!!!! MUST UPDATE ARRAY FILE
+    }
+
+    if (2 <= stringLength && i != decimal_pos) {
+      char2 = Phrase.charAt(1);
+    } else if (2 <= stringLength) {
+      char2 = convert(Phrase.charAt(1)) //!!!! MUST UPDATE ARRAY FILE
+    }
+    
+    if (3 <= stringLength && i != decimal_pos) {
+      char3 = Phrase.charAt(2);
+    } else if (3 <= stringLength) {
+      char3 = convert(Phrase.charAt(2)) //!!!! MUST UPDATE ARRAY FILE
+    }
     if (digits == 4) {
-      if (4 <= stringLength) char4 = Phrase.charAt(3);
+      if (4 <= stringLength && i != decimal_pos) {
+      char4 = Phrase.charAt(3)
+      } else if (4 <= stringLength) {
+      char4 = convert(Phrase.charAt(3)) //!!!! MUST UPDATE ARRAY FILE
+      }
     }
     printDigit(char1, D1);
     delay(2);

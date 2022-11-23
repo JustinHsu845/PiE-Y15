@@ -8,7 +8,7 @@ const int charsInArray = 37;
 byte seg[] {pinA,pinB,pinC,pinD,pinE,pinF,pinG,pinDP};
 byte Char[charsInArray][9] { 
            {1,1,1,1,1,1,0,0,'0'},//0
-           {1,1,1,1,1,1,0,1,'a'} ,          
+           {1,1,1,1,1,1,0,1,'a'},//0.          
            {0,1,1,0,0,0,0,0,'1'},//1
            {1,1,0,1,1,0,1,0,'2'},//2
            {1,1,1,1,0,0,1,0,'3'},//3
