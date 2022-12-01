@@ -43,9 +43,11 @@ void loop() {
   //reset();// use this function to reset the display
   //printDisplay("C  1", 2000);
   String toPrint = "";
-  float cell1 = 12.6;
+  float cell1 = 0;
   String sCell1 = String(cell1);
-  printDisplay("ALL ", 2000);
-  printDisplay(sCell1, 2000);
+  printDisplay("FUCC", 2000);
+  //Serial.println("  CC")
+  reset();
+  printDisplay("00.00", 2000);
   //Serial.println(convert(0));
 }

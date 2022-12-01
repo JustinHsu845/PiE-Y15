@@ -4,7 +4,7 @@
 //https://create.arduino.cc/projecthub/aboda243/how-to-use-4-digit-7-segment-without-library-b8e014
 
 #define DP 30
-const int charsInArray = 24;
+const int charsInArray = 26;
 byte seg[] {pinA,pinB,pinC,pinD,pinE,pinF,pinG,pinDP};
 byte Char[charsInArray][9] { 
            {1,1,1,1,1,1,0,0,'0'},//0
@@ -29,10 +29,11 @@ byte Char[charsInArray][9] {
            {1,1,1,1,0,1,1,1,'j'},//9
 
            {1,1,1,0,1,1,1,0,'A'},//A
+           {1,0,0,0,1,1,1,0,'F'},//F
            {0,0,0,1,1,1,0,0,'L'},//L
 
            {1,0,0,1,1,1,0,0,'C'},//C           
-
+           {0,1,1,1,1,1,0,0,'U'},//U
            {0,0,0,0,0,0,0,0,' '}//blank
            };
            

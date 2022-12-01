@@ -43,15 +43,15 @@ char convert(char number) { //converts input char to another char
   }
 }
 
-String removeChar(String phrase, char remove, int numDigits) {
-  char newPhrase[numDigits];
+String removeChar(String phrase, char remove) {
+  String newPhrase = "    ";
   int k = 0;
   for (int i = 0; i < phrase.length(); i++) {
     if (phrase.charAt(i) != remove) {
-      newPhrase[k] = phrase.charAt(i);
+      newPhrase[k] = phrase[i];
       k += 1;
     }
-    if (k == numDigits) {
+    if (k == digits) {
       break;
     }
   }
@@ -60,7 +60,7 @@ String removeChar(String phrase, char remove, int numDigits) {
 
 void printDisplay(String Phrase, int Delay) { //no scrolling
   int stringLength = Phrase.length();
-  int delay_factor = digits * 5;
+  int delay_factor = digits * 2;
   char char1 = ' ';
   char char2 = ' ';
   char char3 = ' ';
@@ -74,8 +74,9 @@ void printDisplay(String Phrase, int Delay) { //no scrolling
       break;
     }
   }
+  //Serial.println(newPhrase.length());
+  Phrase = removeChar(Phrase, '.');
 
-  Phrase = removeChar(Phrase, '.', digits);
   
   if (1 <= stringLength && decimal_pos == 1) {
     char1 = convert(Phrase.charAt(0));
@@ -101,17 +102,20 @@ void printDisplay(String Phrase, int Delay) { //no scrolling
   } else if (4 <= stringLength) {
     char4 = Phrase.charAt(3);
   }
+
+  //Serial.print(char1);
+  //Serial.print(char2);
+  //Serial.print(char3);
+  //Serial.println(char4);
   
 for(int ti = 0 ; ti <= (Delay / delay_factor) ; ti++) { //continously flashes characters for DELAY duration
     printDigit(char1, D1);
-    delay(5);
+    delay(2);
     printDigit(char2, D2);
-    delay(5);
+    delay(2);
     printDigit(char3, D3);
-    delay(5);
-    if (digits > 3) {
-      printDigit(char4, D4);
-      delay(5);      
-    }
+    delay(2);
+    printDigit(char4, D4);
+    delay(2);      
   }
 } 
