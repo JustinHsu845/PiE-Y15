@@ -35,4 +35,11 @@ We are basing our design on the Y9 PDB design. We will use a toggle switch inste
     - Make sure to add header pins to measure voltage from JST-XH plug
     - Use jumpers to connect between JST-XH and analog in
 
+- Component Notes
+    - Resistor for 12v LED dissipates 133mW at 590ohms, 15mA, and 530nm (green).
+    https://jlcpcb.com/partdetail/liteon-LTSTC190TGKT/C364559
+    - Resistor for 5v LED dissipates 27mW at 120ohms, 15mA, and 530nm (green).
+    https://jlcpcb.com/partdetail/liteon-LTSTC190TGKT/C364559
+    - R1 - R6 needs to be precise. Use tolerance < 0.1%. 0605 footprint. Dissipates max 3mW. Voltage divider scale down voltage by 4x. Each divider uses 0.1mA - 0.3mA
+
     
