@@ -19,6 +19,7 @@ bool mode = common_anode;// my display is common anode
 #define D2 3
 #define D3 4
 #define D4 5
+#define Buzzer 1
 #include "array.h"
 #include "functions.h"
 
@@ -42,11 +43,16 @@ void loop() {
   //printDisplay("C 1",2000);// use this function to print a string (has numbers, characters or phrases) when the length of string is 4 or less than 4, the second variable is the time for printing on display
   //reset();// use this function to reset the display
   //printDisplay("C  1", 2000);
-  String toPrint = "";
+  //String toPrint = "";
   float cell1 = 69.69;
   String sCell1 = String(cell1);
-  printDisplay("FUCC", 2000);
+  printDisplay("iiii", 2000);
+  tone(Buzzer, 440);
   //Serial.println("  CC")
   printDisplay(sCell1, 2000);
+  tone(Buzzer, 659);
+  delay(2000);
+  tone(Buzzer, 880);
+  
   //Serial.println(convert(0));
 }
