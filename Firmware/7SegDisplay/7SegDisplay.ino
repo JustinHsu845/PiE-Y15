@@ -44,15 +44,7 @@ void loop() {
   //reset();// use this function to reset the display
   //printDisplay("C  1", 2000);
   //String toPrint = "";
-  float cell1 = 69.69;
-  String sCell1 = String(cell1);
-  printDisplay("iiii", 2000);
-  tone(Buzzer, 440);
-  //Serial.println("  CC")
-  printDisplay(sCell1, 2000);
-  tone(Buzzer, 659);
-  delay(2000);
-  tone(Buzzer, 880);
+  tone(Buzzer, 1000);
   
   //Serial.println(convert(0));
 }
