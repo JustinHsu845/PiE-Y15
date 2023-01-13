@@ -42,9 +42,10 @@ void loop() {
   //printDisplay("C 1",2000);// use this function to print a string (has numbers, characters or phrases) when the length of string is 4 or less than 4, the second variable is the time for printing on display
   //printDisplay("1i1i", 2000);// use this function to reset the display
   //printDisplay("C  1", 2000);
-  printDisplay("11i1", 2000);
+  //printDisplay("iiii", 2000);
   //String toPrint = "";
   //tone(Buzzer, 1000);
+  printDisplay("FUCC", 1000);
   
   //Serial.println(convert(0));
 }
