@@ -15,10 +15,10 @@ bool mode = common_anode;// my display is common anode
 #define pinF 15
 #define pinG 14
 #define pinDP 1
-#define D1 6
-#define D2 5
-#define D3 4
-#define D4 3
+#define D1 3
+#define D2 4
+#define D3 5
+#define D4 6
 #include "array.h"
 #include "functions.h"
 

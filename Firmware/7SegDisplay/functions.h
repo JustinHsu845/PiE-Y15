@@ -86,6 +86,6 @@ for(int ti = 0 ; ti <= (Delay / delay_factor) ; ti++) { //continously flashes ch
     printDigit(toPrint[2], D3);
     delay(2);
     printDigit(toPrint[3], D4);
-    delay(2);      
+    delay(2);
   }
 } 
