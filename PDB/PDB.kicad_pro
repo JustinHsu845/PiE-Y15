@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.1,
-          "height": 1.6,
-          "width": 1.6
+          "drill": 1.0,
+          "height": 1.7,
+          "width": 1.7
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -55,7 +55,18 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "silk_over_copper|147320000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|e39d3858-eb61-4552-ae4a-7d7a1066934e",
+        "silk_over_copper|169291000|20894000|0855a9ef-afab-470f-b029-da51196a9dfc|64de939b-1d93-4388-9347-bc27a2be2520",
+        "silk_over_copper|169291000|34102000|0855a9ef-afab-470f-b029-da51196a9dfc|a9f48708-4a1c-4dde-8051-debff1e67924",
+        "silk_over_copper|169291000|40894000|0855a9ef-afab-470f-b029-da51196a9dfc|e2a53f8e-b3dd-41d3-896b-7167859c643d",
+        "silk_over_copper|169291000|54102000|0855a9ef-afab-470f-b029-da51196a9dfc|7b4b4996-89f6-4ed2-bf8b-2867f03c64c0",
+        "silk_over_copper|169291000|60894000|0855a9ef-afab-470f-b029-da51196a9dfc|bf560d1c-a8ed-4db1-80c8-92ebe5ea595b",
+        "silk_over_copper|169291000|74102000|0855a9ef-afab-470f-b029-da51196a9dfc|a90cbe60-a0ae-40e8-9efe-50d1c6c947c2",
+        "silk_over_copper|169291000|80894000|0855a9ef-afab-470f-b029-da51196a9dfc|1b0d9d4e-8b01-4076-b606-6a1cfaabeb31",
+        "silk_over_copper|169291000|94102000|0855a9ef-afab-470f-b029-da51196a9dfc|45756130-95dc-4136-942c-d0dc5b3561fb",
+        "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|a3053788-3946-4632-9bbf-5cd4b857b7e2"
+      ],
       "meta": {
         "version": 2
       },
