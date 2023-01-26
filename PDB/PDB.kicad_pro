@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 1.0,
-          "height": 1.7,
-          "width": 1.7
+          "drill": 3.24,
+          "height": 3.24,
+          "width": 3.24
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -56,6 +56,7 @@
         }
       ],
       "drc_exclusions": [
+        "silk_over_copper|147320000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|0b2a013f-031c-4819-b9b7-a0e89a3ac162",
         "silk_over_copper|147320000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|e39d3858-eb61-4552-ae4a-7d7a1066934e",
         "silk_over_copper|169291000|20894000|0855a9ef-afab-470f-b029-da51196a9dfc|64de939b-1d93-4388-9347-bc27a2be2520",
         "silk_over_copper|169291000|34102000|0855a9ef-afab-470f-b029-da51196a9dfc|a9f48708-4a1c-4dde-8051-debff1e67924",
@@ -65,6 +66,7 @@
         "silk_over_copper|169291000|74102000|0855a9ef-afab-470f-b029-da51196a9dfc|a90cbe60-a0ae-40e8-9efe-50d1c6c947c2",
         "silk_over_copper|169291000|80894000|0855a9ef-afab-470f-b029-da51196a9dfc|1b0d9d4e-8b01-4076-b606-6a1cfaabeb31",
         "silk_over_copper|169291000|94102000|0855a9ef-afab-470f-b029-da51196a9dfc|45756130-95dc-4136-942c-d0dc5b3561fb",
+        "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|35540d24-9361-4134-821b-d7d6a4a20f11",
         "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|a3053788-3946-4632-9bbf-5cd4b857b7e2"
       ],
       "meta": {
@@ -116,15 +118,15 @@
         "max_error": 0.005,
         "min_clearance": 0.13,
         "min_copper_edge_clearance": 0.0,
-        "min_hole_clearance": 0.25,
+        "min_hole_clearance": 0.26,
         "min_hole_to_hole": 0.5,
         "min_microvia_diameter": 0.19999999999999998,
         "min_microvia_drill": 0.09999999999999999,
         "min_silk_clearance": 0.0,
-        "min_through_hole_diameter": 0.19999999999999998,
+        "min_through_hole_diameter": 0.3,
         "min_track_width": 0.13,
-        "min_via_annular_width": 0.19999999999999998,
-        "min_via_diameter": 0.39999999999999997,
+        "min_via_annular_width": 0.13,
+        "min_via_diameter": 0.3,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "use_height_for_length_calcs": true
@@ -353,7 +355,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "PiE_Footprints"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {
