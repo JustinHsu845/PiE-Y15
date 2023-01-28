@@ -22,6 +22,7 @@ bool mode = common_anode;// my display is common anode
 #include "array.h"
 #include "functions.h"
 
+//test push
 void setup() {                
   pinMode(pinA, OUTPUT);
   pinMode(pinB, OUTPUT);
