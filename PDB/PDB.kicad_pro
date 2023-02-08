@@ -33,9 +33,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 3.24,
-          "height": 3.24,
-          "width": 3.24
+          "drill": 3.0,
+          "height": 4.0,
+          "width": 4.0
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -45,7 +45,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 1.5
         }
       },
       "diff_pair_dimensions": [
@@ -58,6 +58,7 @@
       "drc_exclusions": [
         "silk_over_copper|147320000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|0b2a013f-031c-4819-b9b7-a0e89a3ac162",
         "silk_over_copper|147320000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|e39d3858-eb61-4552-ae4a-7d7a1066934e",
+        "silk_over_copper|150037800|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|0b2a013f-031c-4819-b9b7-a0e89a3ac162",
         "silk_over_copper|169291000|20894000|0855a9ef-afab-470f-b029-da51196a9dfc|64de939b-1d93-4388-9347-bc27a2be2520",
         "silk_over_copper|169291000|34102000|0855a9ef-afab-470f-b029-da51196a9dfc|a9f48708-4a1c-4dde-8051-debff1e67924",
         "silk_over_copper|169291000|40894000|0855a9ef-afab-470f-b029-da51196a9dfc|e2a53f8e-b3dd-41d3-896b-7167859c643d",
@@ -67,7 +68,8 @@
         "silk_over_copper|169291000|80894000|0855a9ef-afab-470f-b029-da51196a9dfc|1b0d9d4e-8b01-4076-b606-6a1cfaabeb31",
         "silk_over_copper|169291000|94102000|0855a9ef-afab-470f-b029-da51196a9dfc|45756130-95dc-4136-942c-d0dc5b3561fb",
         "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|35540d24-9361-4134-821b-d7d6a4a20f11",
-        "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|a3053788-3946-4632-9bbf-5cd4b857b7e2"
+        "silk_over_copper|83820000|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|a3053788-3946-4632-9bbf-5cd4b857b7e2",
+        "silk_over_copper|86537800|16891000|0855a9ef-afab-470f-b029-da51196a9dfc|35540d24-9361-4134-821b-d7d6a4a20f11"
       ],
       "meta": {
         "version": 2

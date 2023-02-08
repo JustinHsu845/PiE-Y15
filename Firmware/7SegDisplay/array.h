@@ -3,9 +3,11 @@
 //Used in Pioneer in Engineering's battery display on PDB
 //https://create.arduino.cc/projecthub/aboda243/how-to-use-4-digit-7-segment-without-library-b8e014
 
-#define DP 30
+//#define DP 30
 const int charsInArray = 27;
-byte seg[] {pinA,pinB,pinC,pinD,pinE,pinF,pinG,pinDP};
+//byte seg[] {pinA,pinB,pinC,pinD,pinE,pinF,pinG,pinDP};
+
+/*
 byte Char[charsInArray][9] { 
            {1,1,1,1,1,1,0,0,'0'},//0
            {1,1,1,1,1,1,0,1,'a'},//0.         
@@ -35,5 +37,38 @@ byte Char[charsInArray][9] {
            {1,0,0,1,1,1,0,0,'C'},//C           
            {0,1,1,1,1,1,0,0,'U'},//U
            {0,0,0,0,0,0,0,0,' '}//blank
-           };
+           }; */
+
+//for expander
+//byte seg[] {pinA,pinB,pinC,pinD,pinE,pinF,pinG,pinDP};
+byte Char[charsInArray][2] { 
+           {0b01111011,'0'},//0
+           {0b01111111,'a'},//0.         
+           {0b01010000,'1'},//1
+           {0b01010100,'b'},//1.
+           {0b10011011,'2'},//2
+           {0b10011111,'c'},//2.
+           {0b11011010,'3'},//3
+           {0b11011110,'d'},//3.
+           {0b11110000,'4'},//4
+           {0b11110100,'e'},//4.
+           {0b11101010,'5'},//5
+           {0b11101110,'f'},//5.
+           {0b11101011,'6'},//6
+           {0b11101111,'g'},//6.
+           {0b01011000,'7'},//7
+           {0b01011100,'h'},//7.
+           {0b11111011,'8'},//8
+           {0b11111111,'i'},//8.
+           {0b11111010,'9'},//9
+           {0b11111110,'j'},//9
+
+           {0b11111001,'A'},//A
+           {0b10101001,'F'},//F
+           {0b00100011,'L'},//L
+           {0b10101011,'E'},
+           {0b00101011,'C'},//C           
+           {0b01110011,'U'},//U
+           {0b00000000,' '}//blank
+           }; 
            
