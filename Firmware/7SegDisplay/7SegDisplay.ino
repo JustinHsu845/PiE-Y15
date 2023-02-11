@@ -30,6 +30,8 @@ void setup() {
   pinMode(A2, INPUT);
   pinMode(A1, INPUT);
   pinMode(BUZZER, OUTPUT);
+  pinMode(0, OUTPUT);
+  pinMode(1, INPUT);
   Wire.begin();
 }
 //long previousTime = 0;
@@ -38,19 +40,19 @@ void loop() {
   //unsigned long currentTime = millis();
   analogReference(DEFAULT);
   //float* voltages = parseVoltage(analogRead(Cell1), analogRead(Cell2), analogRead(Cell3));
-  float r_v1 = (float) analogRead(Cell1);
+  float r_v1 = average(Cell1, 50);
   float v_v1 = r_v1 * 20.0/1023.0;
   String o_v1 = DisplayChars(String(v_v1));
   
-  float r_v2 = (float) analogRead(Cell2);
+  float r_v2 = average(Cell2, 50);
   float v_v2 = (r_v2 * 20.0/1023.0) - v_v1;
   String o_v2 = DisplayChars(String(v_v2));
   
-  float r_v3 = (float) analogRead(Cell3);
+  float r_v3 = average(Cell3, 50);
   float v_v3 = (r_v3 * 20.0/1023.0) - v_v2 - v_v1;
   String o_v3 = DisplayChars(String(v_v3));
   
-  float r_all = (float) analogRead(Cell3);
+  float r_all = average(Cell3, 50);
   float v_all = r_v3 * 20.0/1023.0;
   String o_all = DisplayChars(String(v_all));
 
@@ -59,7 +61,7 @@ void loop() {
     //noTone(BUZZER);
   //}
   //Serial.println(o_v1);
-
+  
   displayString("CEL1", 2000);
   displayString(o_v1, 2000);
   displayString("CEL2", 2000);
@@ -79,37 +81,45 @@ void displayString(String phrase, int length) {
     delay(2);
     printDigit(phrase[2], D3);
     delay(2);
-
     printDigit(phrase[3], D4);
-
-    
     delay(2);
   }
 }
 
 /* Voltage divider divides voltages by 4.
    outputs voltage of the 3 cells in a float array. */
-float* parseVoltage(int pin1, int pin2, int pin3) {
-  float voltage1 = (float) pin1 * 20 / 1023;
-  float voltage2 = (float) pin2 * 20 / 1023;
-  float voltage3 = (float) pin3 * 20 / 1023;
-  float output[] = {0.0, 0.0, 0.0};
-  output[0] = voltage1;
-  output[1] = voltage2 - voltage1;
-  output[2] = voltage3 - voltage2;
-  //Serial.println(voltage1);
+String* parseVoltage(int pin1, int pin2, int pin3) {
+
+  float r_v1 = average(Cell1, 100);
+  float v_v1 = r_v1 * 20.0/1023.0;
+  String o_v1 = DisplayChars(String(v_v1));
+  
+  float r_v2 = average(Cell2, 100);
+  float v_v2 = (r_v2 * 20.0/1023.0) - v_v1;
+  String o_v2 = DisplayChars(String(v_v2));
+  
+  float r_v3 = average(Cell3, 100);
+  float v_v3 = (r_v3 * 20.0/1023.0) - v_v2 - v_v1;
+  String o_v3 = DisplayChars(String(v_v3));
+  
+  float r_all = average(Cell3, 100);
+  float v_all = r_v3 * 20.0/1023.0;
+  String o_all = DisplayChars(String(v_all));
+  
+  String output[] = {o_v1, o_v2, o_v3, o_all};
   return output;
 }
-//for(int ti = 0 ; ti <= (Delay / delay_factor) ; ti++) { //continously flashes characters for DELAY duration
-  //printDigit(toPrint[0], D1);
-  //delay(2);
-  //printDigit(toPrint[1], D2);
-  //delay(2);
-  //printDigit(toPrint[2], D3);
-  //delay(2);
-  //printDigit(toPrint[3], D4);
-  //delay(2);
-  //}
+
+/* gets the average values from an analog pin.
+   Returns the averaged value of the pin. */
+float average(int pin, int samples) {
+  float sum = 0.0;
+  for (int i = 0; i < samples; i++) {
+    sum += analogRead(pin);
+  }
+  float average = sum / samples;
+  return average;
+}
 
 void expanderWrite(byte _data) {
   Wire.beginTransmission(expander);
