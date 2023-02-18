@@ -1,8 +1,3 @@
-//Created by aboda243
-//Modified by Justin H. for Pioneers in Engineering
-//Used in Pioneer in Engineering's battery display on PDB
-//https://create.arduino.cc/projecthub/aboda243/how-to-use-4-digit-7-segment-without-library-b8e014
-
 #include <Wire.h>
 
 #define expander B0100000 
@@ -15,25 +10,35 @@
 #define Cell1 A3
 #define Cell2 A2
 #define Cell3 A1
+#define TOGGLE 16
 #include "array.h"
 #include "functions.h"
 
-//test push
-void setup() {                
+void setup() {     
+  Serial.begin(9600);   
+  Serial1.begin(9600);        
 
   pinMode(D1, OUTPUT);  
   pinMode(D2, OUTPUT);  
   pinMode(D3, OUTPUT);  
   pinMode(D4, OUTPUT); 
-  Serial.begin(9600);
+
   pinMode(A3, INPUT);
   pinMode(A2, INPUT);
   pinMode(A1, INPUT);
+  
   pinMode(BUZZER, OUTPUT);
+
+  pinMode(TOGGLE, 16);
+
   pinMode(0, OUTPUT);
   pinMode(1, INPUT);
+  
   Wire.begin();
+
 }
+
+char network_switch = -1;
 //long previousTime = 0;
 // the loop routine runs over and over again forever:
 void loop() {
@@ -41,26 +46,28 @@ void loop() {
   analogReference(DEFAULT);
   //float* voltages = parseVoltage(analogRead(Cell1), analogRead(Cell2), analogRead(Cell3));
   float r_v1 = average(Cell1, 50);
-  float v_v1 = r_v1 * 20.0/1023.0;
+  float v_v1 = r_v1 * 20.3/1023.0;
   String o_v1 = DisplayChars(String(v_v1));
   
   float r_v2 = average(Cell2, 50);
-  float v_v2 = (r_v2 * 20.0/1023.0) - v_v1;
+  float v_v2 = (r_v2 * 20.1/1023.0) - v_v1;
   String o_v2 = DisplayChars(String(v_v2));
   
   float r_v3 = average(Cell3, 50);
-  float v_v3 = (r_v3 * 20.0/1023.0) - v_v2 - v_v1;
+  float v_v3 = (r_v3 * 20.03/1023.0) - v_v2 - v_v1;
   String o_v3 = DisplayChars(String(v_v3));
   
   float r_all = average(Cell3, 50);
-  float v_all = r_v3 * 20.0/1023.0;
+  float v_all = r_v3 * 20.03/1023.0;
   String o_all = DisplayChars(String(v_all));
 
-  tone(10, 1000);
-  //else if (v_all > 12 && v_v1 > 4.0 && v_v2 > 4.0 && v_v3 > 4.0) {
-    //noTone(BUZZER);
-  //}
-  //Serial.println(o_v1);
+  if (v_all < 11.5 || v_v1 < 3.8 || v_v2 < 3.8 || v_v3 < 3.8) {
+  tone(10, 800);
+  } else if (v_all > 12 && v_v1 > 4.0 && v_v2 > 4.0 && v_v3 > 4.0) {
+    noTone(BUZZER);
+  }
+  
+  Serial.println(digitalRead(TOGGLE));
   
   displayString("CEL1", 2000);
   displayString(o_v1, 2000);
@@ -75,6 +82,10 @@ void loop() {
 
 void displayString(String phrase, int length) {
   for (int i = 0; i < length/8; i++) {
+    if (digitalRead(TOGGLE) != network_switch) {
+      network_switch = digitalRead(TOGGLE);
+      Serial1.println(digitalRead(TOGGLE));
+    }
     printDigit(phrase[0], D1);
     delay(2);
     printDigit(phrase[1], D2);
@@ -86,29 +97,6 @@ void displayString(String phrase, int length) {
   }
 }
 
-/* Voltage divider divides voltages by 4.
-   outputs voltage of the 3 cells in a float array. */
-String* parseVoltage(int pin1, int pin2, int pin3) {
-
-  float r_v1 = average(Cell1, 100);
-  float v_v1 = r_v1 * 20.0/1023.0;
-  String o_v1 = DisplayChars(String(v_v1));
-  
-  float r_v2 = average(Cell2, 100);
-  float v_v2 = (r_v2 * 20.0/1023.0) - v_v1;
-  String o_v2 = DisplayChars(String(v_v2));
-  
-  float r_v3 = average(Cell3, 100);
-  float v_v3 = (r_v3 * 20.0/1023.0) - v_v2 - v_v1;
-  String o_v3 = DisplayChars(String(v_v3));
-  
-  float r_all = average(Cell3, 100);
-  float v_all = r_v3 * 20.0/1023.0;
-  String o_all = DisplayChars(String(v_all));
-  
-  String output[] = {o_v1, o_v2, o_v3, o_all};
-  return output;
-}
 
 /* gets the average values from an analog pin.
    Returns the averaged value of the pin. */
