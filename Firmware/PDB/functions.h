@@ -4,34 +4,6 @@
 //https://create.arduino.cc/projecthub/aboda243/how-to-use-4-digit-7-segment-without-library-b8e014
 
 
-
-//void reset() { 
-  //digitalWrite(D1, LOW);
-  //digitalWrite(D2, LOW);
-  //digitalWrite(D3, LOW);
-  //digitalWrite(D4, LOW);
-  //expanderWrite(0b00000000);
-  //for(byte i = 0 ; i < 8 ; i++){
-    //digitalWrite(seg[i], HIGH); //mode = 1; for each segment, 1 = off and 0 = on
-  //}
-//}
-
-/*
-void printDigit(char Chara, int digitPort) { 
-  reset(); 
-  int character = -1;
-  digitalWrite(digitPort, HIGH);
-  for(int i = 0 ; i < charsInArray ; i++) {
-    if (Chara == Char[i][8]) { //set character equal to the corresponding array index
-     character = i;
-    }
-  }
-  for (int i = 0; i < 8; i++) { //iterate through each segment for the digit, setting on or off as defined by array.h
-    digitalWrite(seg[i],!Char[character][i]);  
-  }
-} */
-
-
 char convert(char number) { //converts input char to another char
   if (isdigit(number)) {
     String alphabet = "abcdefghijklmnopqrstuvwxyz";
